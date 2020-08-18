@@ -1,3 +1,29 @@
 * {
   font-family: 'Sawarabi Mincho', sans-serif;
 }
+
+.hrbar {
+  border-top: 5px solid gray;
+  margin: 50px 0;
+}
+
+.main-content {
+  position: relative;
+}
+
+.background-image {
+  text-align: center;
+  z-index: 1;
+}
+
+.button-group {
+  z-index: 2;
+  width: 70%;
+  position: absolute;
+  top: 32%;
+  left: 15%;
+}
+
+.btn-initial {
+  margin: 50px auto;
+}
