@@ -2,8 +2,9 @@
   font-family: 'Sawarabi Mincho', sans-serif;
 }
 
-.main-wrapper {
-  background-color: rgba(168, 161, 161, 0.5);
+.container-background {
+  text-align: center;
+  z-index: 1;
 }
 
 .hrbar {
@@ -16,18 +17,8 @@
 }
 
 .background-image {
-  z-index: 1;
-  text-align: center;
-}
-
-.white-background {
   z-index: 2;
-  background-color: rgba(255, 250, 250, 0.5);
-  height: 84%;
-  width: 82%;
-  position: absolute;
-  top: 8%;
-  left: 9%;
+  text-align: center;
 }
 
 .button-group {

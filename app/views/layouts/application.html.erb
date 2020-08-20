@@ -19,11 +19,13 @@
   <body>
     <div class="main-wrapper">
       <%= render "layouts/header" %>
+      <hr class="hrbar">
       <div class="container-background">
         <div class="container">
           <%= yield %>
         </div>
       </div>
+      <hr class="hrbar">
       <%= render "layouts/footer" %>
     </div>
     <%= javascript_include_tag 'application', media: "all" %>
