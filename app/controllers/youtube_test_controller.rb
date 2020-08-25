@@ -37,3 +37,5 @@ class YoutubeTestController < ApplicationController
     @youtube_data = find_video_categories
   end
 end
+
+# video_listから検索し、tagsが含まれている場合は結果を取得することができる。

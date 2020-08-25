@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: 'youtube_test#index'
+  get '/', to: 'yourtuber#index'
 
-  resources :yourtuber, only: [:show]
+  resources :yourtuber, only: [:index, :new, :show]
 end

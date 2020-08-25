@@ -2,11 +2,6 @@
   font-family: 'Sawarabi Mincho', sans-serif;
 }
 
-.container-background {
-  text-align: center;
-  z-index: 1;
-}
-
 .hrbar {
   border-top: 5px solid gray;
   margin: 50px 0;
@@ -14,6 +9,14 @@
 
 .main-content {
   position: relative;
+}
+
+.question-title {
+  z-index: 3;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  background: linear-gradient(transparent 70%, yellow 70%);
 }
 
 .background-image {
@@ -25,10 +28,20 @@
   z-index: 3;
   width: 70%;
   position: absolute;
-  top: 32%;
+  top: 40%;
   left: 15%;
 }
 
 .btn-initial {
   margin: 50px auto;
+}
+
+.select-number {
+  font-weight: bold;
+  float: left;
+}
+
+/* index */
+.modal-question-title {
+  background: linear-gradient(transparent 70%, yellow 70%);
 }
