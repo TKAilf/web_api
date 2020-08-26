@@ -1,4 +1,4 @@
-$("#button1").on("click",function() {
-  $("#main-content1").fadeOut("slow");
-  $("#main-content2").fadeIn("slow");
+$("#index-modal-nessesary").on("click",function() {
+  $("#index-modal").fadeOut("slow");
+  $("#index-container").fadeIn("slow");
 });

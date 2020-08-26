@@ -45,3 +45,7 @@
 .modal-question-title {
   background: linear-gradient(transparent 70%, yellow 70%);
 }
+
+.index-container{
+  display: none;
+}
