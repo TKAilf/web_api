@@ -2,14 +2,16 @@
   <div class="background-image">
     <%= image_tag "background-image.png" , class: "img-fluid border", alt: "background-image" %>
   </div>
-  <%# tag-content %>
   <div class="tag-content" id="tag-content">
     <h1 class="question-title">動画のIDを入力してください</h1>
-    <form class="button-group">
+    <div class="button-group">
       <div class="form-group">
-        <label class="h4 float-left mb-3">タグを検索する</label>
-        <input class="form-control form-control-lg" placeholder="動画IDを入力してください">
-        <button type="submit" class="btn btn-primary my-3">確定して次へ</button>
+          <%= form_with url: yourtuber_searches_path, local: true do |form| %>
+            <%= form.label :video_id, 'タグを検索する', class: 'h4 float-left mb-3' %>
+            <%= form.text_field :video_id, class: 'form-control form-control-lg', placeholder: '動画IDを入力してください' %>
+            <small class="text-danger">このサイトはWEB APIを使用しているため使用制限があります。使用制限に達している場合はサイトの使用ができなくなります。</small>
+            <%= form.submit '確定して次へ', class: 'btn btn-primary my-3' %>
+          <% end %>
         <p>
           <button class="btn btn-primary mt-3 px-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             動画ID入力例
@@ -22,40 +24,6 @@
           </div>
         </div>
       </div>
-    </form>
-  </div>
-  <%# question1 %>
-  <%# <div class="more_search" id="more_search">
-    <h1 class="question-title">文字を入力してください</h1>
-    <form class="button-group">
-      <div class="form-group">
-        <label class="h4 float-left">タグを指定する</label>
-        <input class="form-control form-control-lg" placeholder="タグ名を入力してください">
-        <button type="submit" class="btn btn-primary my-3">確定して次へ</button>
-        <p>
-          <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            タグの例を確認する
-          </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body text-left">
-            <p>"ゲーム実況","apex","overwatch","モンスターストライク"etc...</p>
-            <p>調べてみたい内容の単語を指定してください。今回は作者の好きなゲームの単語を並べてみました。</p>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div> %>
-  <%# question2 %>
-  <%# <div class="main-content2" id="main-content2">
-    <h1 class="question-title">Qustion...カキクケコ？</h1>
-    <div class="button-group">
-      <div class="btn-initial">
-        <button type="button" class="btn btn-outline-primary btn-lg btn-block btn-position" id="button1"><span class="select-number">Select.1</span>Secondary</button>
-      </div>
-      <div class="btn-initial"> 
-        <button type="button" class="btn btn-outline-success btn-lg btn-block"><span class="select-number" id="button2">Select.2</span>Success</button>
-      </div>
     </div>
-  </div> %>
+  </div>
 </div>

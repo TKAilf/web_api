@@ -1,0 +1,19 @@
+<div class="search-container">
+  <% @find_videos_list.items.each do |item| %>
+    <p>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= @input_video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </p>
+    <div class="tags-form">
+      <u class="h4 tags-form-title">
+        この動画のタグはこちらです！
+      </u>
+      <div class="tags-form-elements p-4 border rounded bg-light">
+        <% item.snippet.tags.each do |tag| %>
+          <span class="h5 border border-info rounded-pill text-center px-3 m-3"><%= tag %></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
