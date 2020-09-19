@@ -10,8 +10,12 @@
         この動画のタグはこちらです！
       </u>
       <div class="tags-form-elements p-4 border rounded bg-light">
-        <% item.snippet.tags.each do |tag| %>
-          <span class="h5 border border-info rounded-pill text-center px-3 m-3"><%= tag %></span>
+        <% if item.snippet.tags.present? %>
+          <% item.snippet.tags.each do |tag| %>
+            <span class="h5 border border-info rounded-pill text-center px-3 m-3"><%= tag %></span>
+          <% end %>
+        <% else %>
+          <span class="h5 text-center px-3 m-3">タグはありません</span>
         <% end %>
       </div>
     </div>
