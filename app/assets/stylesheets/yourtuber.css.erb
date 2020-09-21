@@ -8,28 +8,15 @@
 }
 
 .main-content {
-  position: relative;
-}
-
-.question-title {
-  z-index: 3;
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  background: linear-gradient(transparent 70%, yellow 70%);
-}
-
-.background-image {
-  z-index: 2;
-  text-align: center;
+  background-image: url(<%= asset_path('background-paper-image.jpg') %>);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 650px
 }
 
 .button-group {
-  z-index: 3;
   width: 70%;
-  position: absolute;
-  top: 40%;
-  left: 15%;
 }
 
 .btn-initial {
@@ -41,11 +28,16 @@
   float: left;
 }
 
-/* index */
+<%# index %>
 .modal-question-title {
   background: linear-gradient(transparent 70%, yellow 70%);
 }
 
 .index-container{
   display: none;
+}
+
+.index-container-table{
+  overflow-x: scroll;
+  white-space: nowrap;
 }

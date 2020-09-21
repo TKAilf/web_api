@@ -1,27 +1,26 @@
 <div class="main-content">
-  <div class="background-image">
-    <%= image_tag "background-image.png" , class: "img-fluid border", alt: "background-image" %>
-  </div>
-  <div class="tag-content" id="tag-content">
-    <h1 class="question-title">動画のIDを入力してください</h1>
-    <div class="w-100"></div>
-    <div class="button-group">
-      <div class="form-group">
-          <%= form_with url: yourtuber_searches_path, method: :get, local: true do |form| %>
-            <%= form.label :video_id, 'タグを検索する', class: 'h4 float-left mb-md-3' %>
-            <%= form.text_field :video_id, class: 'form-control form-control-lg', placeholder: '動画IDを入力してください', required: true, pattern: '[0-9A-Za-z_-]{10}[048AEIMQUYcgkosw]' %>
-            <small class="text-danger">このサイトはWEB APIを使用しているため使用制限があります。使用制限に達している場合はサイトの使用ができなくなります。</small>
-            <%= form.submit '確定して次へ', class: 'btn btn-primary my-md-3' %>
-          <% end %>
-        <p>
-          <button class="btn btn-primary mt-md-3 px-md-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            動画ID入力例
-          </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body text-left">
-            <p>動画URL: https://www.youtube.com/watch?v=<span class="text-danger">-bNMq1Nxn5o</span></p>
-            <p>タグを調べてみたい動画のURLを確認してください。上記の例では<span class="text-danger">-bNMq1Nxn5o</span>の赤文字部が動画IDになります。</p>
+  <div class="background-paper-image">
+    <div class="tag-content" id="tag-content">
+      <h1 class="text-center mx-auto pt-md-5">動画のIDを入力してください</h1>
+      <div class="w-100 py-md-5"></div>
+      <div class="button-group mx-auto">
+        <div class="form-group">
+            <%= form_with url: yourtuber_searches_path, method: :get, local: true do |form| %>
+              <%= form.label :video_id, 'タグを検索する', class: 'h4 float-left mb-md-3' %>
+              <%= form.text_field :video_id, class: 'form-control form-control-lg', placeholder: '動画IDを入力してください', required: true, pattern: '[0-9A-Za-z_-]{10}[048AEIMQUYcgkosw]' %>
+              <small class="text-danger">このサイトはWEB APIを使用しているため使用制限があります。使用制限に達している場合はサイトの使用ができなくなります。</small>
+              <%= form.submit '確定して次へ', class: 'btn btn-primary my-3' %>
+            <% end %>
+          <p>
+            <button class="btn btn-primary mt-md-3 px-md-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              動画ID入力例
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body text-left">
+              <p>動画URL: https://www.youtube.com/watch?v=<span class="text-danger">-bNMq1Nxn5o</span></p>
+              <p>タグを調べてみたい動画のURLを確認してください。上記の例では<span class="text-danger">-bNMq1Nxn5o</span>の赤文字部が動画IDになります。</p>
+            </div>
           </div>
         </div>
       </div>
