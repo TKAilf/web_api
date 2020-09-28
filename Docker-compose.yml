@@ -10,6 +10,12 @@ services:
       - log-data:/myapp/log
     depends_on:
       - db
+    environment: #以下追記
+    - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
+  selenium_chrome:
+    image: selenium/standalone-chrome-debug
+    logging:
+      driver: none
   db:
     image: postgres
     volumes:
