@@ -20,8 +20,12 @@ RSpec.describe "Yourtubers", type: :system do
 
     context "click on nessesary botton" do
       it "index_yourtuber_path with JS", js: true do
+        expect(page).to have_css '#index-modal'
+        expect(page).not_to have_css '#index-container'
         click_on '必要'
         expect(current_path).to eq yourtuber_index_path
+        expect(page).not_to have_css '#index-modal'
+        expect(page).to have_css '#index-container'
       end
     end
 
