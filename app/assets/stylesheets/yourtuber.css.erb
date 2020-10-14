@@ -1,49 +1,52 @@
-* {
-  font-family: 'Sawarabi Mincho', sans-serif;
-}
-
-.hrbar {
-  border-top: 5px solid gray;
-  margin: 50px 0;
-}
-
-.main-content {
-  background-image: url(<%= asset_path('background-paper-image.jpg') %>);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 650px;
-}
-
-.button-group {
-  width: 70%;
-}
-
-.btn-initial {
-  margin: 50px auto;
-}
-
-.select-number {
-  font-weight: bold;
+.image-options {
+  width: 1140px;
+  margin-right: 0px;
   float: left;
+  display: block;
 }
 
-<%# index %>
-.modal-question-title {
-  background: linear-gradient(transparent 70%, yellow 70%);
+.first-image-background {
+  background-image: url(<%= asset_path('youtuber-2838929_1920.jpg') %>);
 }
 
-.index-container{
-  display: none;
+.second-image-background {
+  background-image: url(<%= asset_path('youtube-icon-3478912_1920.jpg') %>);
 }
 
-.index-container-table{
-  overflow-x: scroll;
-  white-space: nowrap;
+.navigation-botton-position {
+  display: block;
 }
 
-<%# new %>
+#colophon
+  .widgets.widgets-3
+    .widget {
+    width: 48% !important;
+    }
 
-.question-title{
-  width: 70%;
+#colophon {
+  border-top: 2px solid #f4f4f4 !important;
+  clear: initial !important;
+  margin-top: initial !important;
+  width: initial !important;
+}
+
+#colophon
+  .footer-active-sidebar {
+  border-top: initial !important;
+  }
+
+.custom-entry {
+  border-top: 2px solid #f4f4f4;
+  margin-top: 5em;
+  padding-top: 5em;
+}
+
+.thead-font {
+  color: #626262;
+  font-family: Merriweather,serif;
+}
+
+.tbody-font {
+  color: #626262;
+  font-family: Merriweather,serif;
 }

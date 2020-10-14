@@ -1,0 +1,47 @@
+<div id="primary" class="content-area">
+  <article id="post-1774" class="archive-entry post-1774 post type-post status-publish format-standard has-post-thumbnail hentry category-travel tag-experiences tag-trains tag-transport">
+    <header class="entry-header custom-entry">
+      <h2 class="entry-title"><a href="https://demo.siteorigin.com/unwind/visit-countries-train/" rel="bookmark">Youtubeタグについて</a></h2>
+    </header>
+    <div class="entry-thumbnail">
+      <a href="https://demo.siteorigin.com/unwind/visit-countries-train/">
+        <img width="1008" height="670" src="/assets/youtuber-2838929_1920.jpg" class="aligncenter wp-post-image" alt="" loading="lazy" sizes="(max-width: 1008px) 100vw, 1008px" data-attachment-id="1775" data-orig-file="/assets/youtuber-2838929_1920.jpg" data-orig-size="1008,670" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="visit-countries-by-train" data-image-description="" data-medium-file="/assets/youtuber-2838929_1920.jpg" data-large-file="/assets/youtuber-2838929_1920.jpg"> </a>
+    </div>
+    <div class="entry-content">
+      <%= render 'index_content_area_describe' %>
+      <%= render 'index_content_area_table' %>
+    </div>
+  </article>
+  <article id="post-1822" class="archive-entry post-1822 post type-post status-publish format-image has-post-thumbnail hentry category-photography tag-art tag-dark tag-exposure tag-late tag-night post_format-post-format-image">
+    <header class="entry-header">
+      <h2 class="entry-title"><a href="https://demo.siteorigin.com/unwind/night-time-photography/" rel="bookmark">Youtubeのタグ検索</a></h2>
+    </header>
+    <div class="entry-thumbnail">
+      <a href="https://demo.siteorigin.com/unwind/night-time-photography/">
+        <img width="1080" height="1080" src="/assets/youtube-icon-3478912_1920.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" sizes="(max-width: 1080px) 100vw, 1080px" data-attachment-id="1757" data-permalink="https://demo.siteorigin.com/unwind/about/15043874_1090696877710977_2155843849086304256_n/" data-orig-file="/assets/youtube-icon-3478912_1920.jpg" data-orig-size="1080,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="15043874_1090696877710977_2155843849086304256_n" data-image-description="" data-medium-file="/assets/youtube-icon-3478912_1920.jpg" data-large-file="/assets/youtube-icon-3478912_1920.jpg"> </a>
+    </div>
+    <div class="entry-content">
+      <h1 class="question-title mx-auto pt-5">動画のIDを入力してください</h1>
+      <div class="w-100"></div>
+      <div class="button-group mx-auto">
+        <div class="form-group">
+            <%= form_with url: "#", method: :get, local: true do |form| %>
+              <%= form.label :video_id, 'タグを検索する', class: 'h4 float-left mb-md-3' %>
+              <%= form.text_field :video_id, class: 'form-control form-control-lg', placeholder: '動画IDを入力してください', required: true, pattern: '[0-9A-Za-z_-]{10}[048AEIMQUYcgkosw]' %>
+              <small class="text-danger">このサイトはWEB APIを使用しているため使用制限があります。使用制限に達している場合はサイトの使用ができなくなります。</small>
+              <div class="w-100"></div>
+              <%= form.submit '確定して次へ', class: 'btn btn-primary my-3' %>
+            <% end %>
+          <u>下記は動画ID入力例になります</u>
+          <div class="w-100 py-2"></div>
+          <div>
+            <div class="card card-body text-left">
+              <p>動画URL: https://www.youtube.com/watch?v=<span class="text-danger">-bNMq1Nxn5o</span></p>
+              <p>タグを調べてみたい動画のURLを確認してください。上記の例では<span class="text-danger">-bNMq1Nxn5o</span>の赤文字部が動画IDになります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>

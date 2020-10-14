@@ -1,4 +1,130 @@
-<%# index-modal %>
-<%= render 'index-modal' %>
-<%# index-container %>
-<%= render 'index-container' %>
+<body data-rsssl="1" class="home blog theme-siteorigin-unwind woocommerce-js css3-animations hfeed homepage-has-slider header-design-1 page-layout-default page-layout-hide-masthead page-layout-hide-footer-widgets sticky-menu sidebar">
+  <div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    <header id="masthead" class="site-header">
+      <div class="sticky-bar-sentinel" style="height: 0px;"></div>
+			<%= render 'index_navigation' %>
+      <div class="container">
+        <div class="site-branding">
+          <h1 class="site-title"><a href="https://demo.siteorigin.com/unwind/" rel="home">Yourtuber</a></h1>
+        </div>
+      </div>
+    </header>
+    <div id="content" class="site-content">
+      <div class="container">
+				<%= render 'index_flex_slider' %>
+				<%= render 'index_content_area' %>
+      </div>
+    </div>
+    <footer id="colophon" class="site-footer  footer-active-sidebar">
+      <div class="container">
+        <div class="widgets widgets-3" aria-label="Footer Sidebar">
+          <aside id="sow-editor-3" class="widget widget_sow-editor">
+            <div class="so-widget-sow-editor so-widget-sow-editor-base">
+              <h2 class="widget-title heading-strike"><%= link_to 'トップに戻る', "#" %></h2>
+            </div>
+          </aside>
+          <aside id="archives-2" class="widget widget_archive">
+            <h2 class="widget-title heading-strike">© 2020-<%= Time.current.year %> Company, Inc.</h2>
+          </aside>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="scroll-to-top" class="" style="pointer-events: none;">
+    <span class="screen-reader-text">Scroll to top</span>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="55" height="32" viewBox="0 0 55 32">
+      <path fill="#fff" d="M50.276 32l-22.829-22.829-22.829 22.829-4.553-4.553 27.382-27.415 27.415 27.415z"></path>
+    </svg>
+  </div>
+  <script type="text/javascript">
+    var c = document.body.className;
+    c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+    document.body.className = c;
+  </script>
+  <link rel="stylesheet" id="sow-social-media-buttons-flat-8ee9954e1560-css" href="https://demo.siteorigin.com/unwind/files/siteorigin-widgets/sow-social-media-buttons-flat-8ee9954e1560.css?ver=5.5.1" type="text/css" media="all">
+  <link rel="stylesheet" id="siteorigin-widget-icon-font-fontawesome-css" href="https://demo.siteorigin.com/unwind/wp-content/plugins/so-widgets-bundle/icons/fontawesome/style.css?ver=5.5.1" type="text/css" media="all">
+  <script type="text/javascript" id="wpmenucart-js-extra">
+    /* <![CDATA[ */
+    var wpmenucart_ajax = {
+      "ajaxurl": "https:\/\/demo.siteorigin.com\/unwind\/wp-admin\/admin-ajax.php",
+      "nonce": "b9b2d88588"
+    };
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce-menu-bar-cart/javascript/wpmenucart.js?ver=2.9.5" id="wpmenucart-js"></script>
+  <script type="text/javascript" id="contact-form-7-js-extra">
+    /* <![CDATA[ */
+    var wpcf7 = {
+      "apiSettings": {
+        "root": "https:\/\/demo.siteorigin.com\/unwind\/wp-json\/contact-form-7\/v1",
+        "namespace": "contact-form-7\/v1"
+      },
+      "cached": "1"
+    };
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.2.2" id="contact-form-7-js"></script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70" id="jquery-blockui-js"></script>
+  <script type="text/javascript" id="wc-add-to-cart-js-extra">
+    /* <![CDATA[ */
+    var wc_add_to_cart_params = {
+      "ajax_url": "\/unwind\/wp-admin\/admin-ajax.php",
+      "wc_ajax_url": "\/unwind\/?wc-ajax=%%endpoint%%",
+      "i18n_view_cart": "View cart",
+      "cart_url": "https:\/\/demo.siteorigin.com\/unwind\/shop\/cart\/",
+      "is_cart": "",
+      "cart_redirect_after_add": "no"
+    };
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.5.2" id="wc-add-to-cart-js"></script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4" id="js-cookie-js"></script>
+  <script type="text/javascript" id="woocommerce-js-extra">
+    /* <![CDATA[ */
+    var woocommerce_params = {
+      "ajax_url": "\/unwind\/wp-admin\/admin-ajax.php",
+      "wc_ajax_url": "\/unwind\/?wc-ajax=%%endpoint%%"
+    };
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=4.5.2" id="woocommerce-js"></script>
+  <script type="text/javascript" id="wc-cart-fragments-js-extra">
+    /* <![CDATA[ */
+    var wc_cart_fragments_params = {
+      "ajax_url": "\/unwind\/wp-admin\/admin-ajax.php",
+      "wc_ajax_url": "\/unwind\/?wc-ajax=%%endpoint%%",
+      "cart_hash_key": "wc_cart_hash_08b68edf938987213b9f71b2aa1f7798",
+      "fragment_name": "wc_fragments_08b68edf938987213b9f71b2aa1f7798",
+      "request_timeout": "5000"
+    };
+    /* ]]> */
+  </script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=4.5.2" id="wc-cart-fragments-js"></script>
+  <script type="text/javascript" id="wc-cart-fragments-js-after">
+    jQuery('body').bind('wc_fragments_refreshed', function() {
+      var jetpackLazyImagesLoadEvent;
+      try {
+        jetpackLazyImagesLoadEvent = new Event('jetpack-lazy-images-load', {
+          bubbles: true,
+          cancelable: true
+        });
+      } catch (e) {
+        jetpackLazyImagesLoadEvent = document.createEvent('Event')
+        jetpackLazyImagesLoadEvent.initEvent('jetpack-lazy-images-load', true, true);
+      }
+      jQuery('body').get(0).dispatchEvent(jetpackLazyImagesLoadEvent);
+    });
+  </script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/themes/siteorigin-unwind/js/jquery.flexslider.min.js?ver=2.6.3" id="jquery-flexslider-js"></script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/themes/siteorigin-unwind/js/jquery.fitvids.min.js?ver=1.1" id="jquery-fitvids-js"></script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/themes/siteorigin-unwind/js/unwind.min.js?ver=1.6.7" id="siteorigin-unwind-script-js"></script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/themes/siteorigin-unwind/js/skip-link-focus-fix.min.js?ver=20130115" id="siteorigin-unwind-skip-link-focus-fix-js"></script>
+  <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-includes/js/wp-embed.min.js?ver=5.5.1" id="wp-embed-js"></script>
+
+  <div id="quick-view-container">
+    <div id="product-quick-view" class="quick-view"></div>
+  </div>
+
+
+</body>
