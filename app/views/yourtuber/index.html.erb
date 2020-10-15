@@ -1,35 +1,13 @@
 <body data-rsssl="1" class="home blog theme-siteorigin-unwind woocommerce-js css3-animations hfeed homepage-has-slider header-design-1 page-layout-default page-layout-hide-masthead page-layout-hide-footer-widgets sticky-menu sidebar">
   <div id="page" class="hfeed site">
-    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-    <header id="masthead" class="site-header">
-      <div class="sticky-bar-sentinel" style="height: 0px;"></div>
-			<%= render 'index_navigation' %>
-      <div class="container">
-        <div class="site-branding">
-          <h1 class="site-title"><a href="https://demo.siteorigin.com/unwind/" rel="home">Yourtuber</a></h1>
-        </div>
-      </div>
-    </header>
+    <%= render 'index_header' %>
     <div id="content" class="site-content">
       <div class="container">
 				<%= render 'index_flex_slider' %>
 				<%= render 'index_content_area' %>
       </div>
     </div>
-    <footer id="colophon" class="site-footer  footer-active-sidebar">
-      <div class="container">
-        <div class="widgets widgets-3" aria-label="Footer Sidebar">
-          <aside id="sow-editor-3" class="widget widget_sow-editor">
-            <div class="so-widget-sow-editor so-widget-sow-editor-base">
-              <h2 class="widget-title heading-strike"><%= link_to 'トップに戻る', "#" %></h2>
-            </div>
-          </aside>
-          <aside id="archives-2" class="widget widget_archive">
-            <h2 class="widget-title heading-strike">© 2020-<%= Time.current.year %> Company, Inc.</h2>
-          </aside>
-        </div>
-      </div>
-    </footer>
+    <%= render 'index_footer' %>
   </div>
   <div id="scroll-to-top" class="" style="pointer-events: none;">
     <span class="screen-reader-text">Scroll to top</span>
@@ -121,10 +99,7 @@
   <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/themes/siteorigin-unwind/js/unwind.min.js?ver=1.6.7" id="siteorigin-unwind-script-js"></script>
   <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/themes/siteorigin-unwind/js/skip-link-focus-fix.min.js?ver=20130115" id="siteorigin-unwind-skip-link-focus-fix-js"></script>
   <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-includes/js/wp-embed.min.js?ver=5.5.1" id="wp-embed-js"></script>
-
   <div id="quick-view-container">
     <div id="product-quick-view" class="quick-view"></div>
   </div>
-
-
 </body>
