@@ -2,117 +2,17 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>TestDir</title>
+    <title>Yourtuber.com</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", media: "all" %>
-    <script type="text/javascript">
-      var cmanLinkScrollCns = {};
-      cmanLinkScrollCns["moveWidth"] = 3;
-      cmanLinkScrollCns["moveTime"] = 20;
-      cmanLinkScrollCns["movePar1"]  = '0.009,0.027,0.055,0.091,0.136,0.191,0.255,0.327,0.409,0.5,0.591,0.673,0.745,0.809,0.864,0.909,0.945,0.973,0.991,1';
-      cmanLinkScrollCns["movePar2"]  = '0.011,0.033,0.067,0.111,0.167,0.233,0.311,0.4,0.5,0.6,0.689,0.767,0.833,0.889,0.933,0.967,0.989,1';
-      cmanLinkScrollCns["movePar3"]  = '0.014,0.042,0.083,0.139,0.208,0.292,0.389,0.5,0.611,0.708,0.792,0.861,0.917,0.958,0.986,1';
-      cmanLinkScrollCns["movePar4"]  = '0.018,0.054,0.107,0.179,0.268,0.375,0.5,0.625,0.732,0.821,0.893,0.946,0.982,1';
-      cmanLinkScrollCns["movePar5"]  = '0.024,0.071,0.143,0.238,0.357,0.5,0.643,0.762,0.857,0.929,0.976,1';
-      cmanLinkScrollCns["movePar6"]  = '0.033,0.1,0.2,0.333,0.5,0.667,0.8,0.9,0.967,1';
-      cmanLinkScrollCns["movePar7"]  = '0.05,0.15,0.3,0.5,0.7,0.85,0.95,1';
-      cmanLinkScrollCns["movePar8"]  = '0.083,0.25,0.5,0.75,0.917,1';
-      cmanLinkScrollCns["movePar9"]  = '0.167,0.5,0.833,1';
-      cmanLinkScrollCns["movePar10"] = '1';
-      var cmanLinkScrollWk  = {};
-      function cmanLinkScroll(argID){
-          cmanLinkScrollWk["startX"] = document.body.scrollLeft || document.documentElement.scrollLeft;
-          cmanLinkScrollWk["startY"] = document.body.scrollTop  || document.documentElement.scrollTop;
-          cmanLinkScrollWk["endY"]   = Math.floor(document.getElementById(argID).getBoundingClientRect().top);
-          cmanLinkScrollWk["endY"]  += cmanLinkScrollWk["startY"];
-          cmanLinkScrollWk["moveIdx"] = 0;
-          cmanLinkScrollWk["nowY"]    = cmanLinkScrollWk["startY"];
-          cmanLinkScrollLoop();
-      }
-      function cmanLinkScrollLoop(){
-          if (cmanLinkScrollWk["timer"]) {clearTimeout(cmanLinkScrollWk["timer"]);}
-          var wParTbl = cmanLinkScrollCns["movePar" + cmanLinkScrollCns["moveWidth"]].split(",");
-          var wPar = wParTbl[cmanLinkScrollWk["moveIdx"]];
-          cmanLinkScrollWk["moveIdx"]++;
-          cmanLinkScrollWk["nowY"]  = Math.floor((cmanLinkScrollWk["endY"] - cmanLinkScrollWk["startY"]) * wPar + cmanLinkScrollWk["startY"]);
-          if(cmanLinkScrollWk["moveIdx"] > wParTbl.length){
-              clearTimeout(cmanLinkScrollWk["timer"]);   // タイマクリア
-          } else {
-              window.scrollTo(cmanLinkScrollWk["startX"],cmanLinkScrollWk["nowY"]);   // 移動実行
-              cmanLinkScrollWk["timer"] = setTimeout("cmanLinkScrollLoop()",cmanLinkScrollCns["moveTime"]);   // 次のループ
-          }
-      }
-    </script>
+    <%= javascript_include_tag "application" %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//s.w.org">
     <link rel="alternate" type="application/rss+xml" title="Unwind » Feed" href="https://demo.siteorigin.com/unwind/feed/">
     <link rel="alternate" type="application/rss+xml" title="Unwind » Comments Feed" href="https://demo.siteorigin.com/unwind/comments/feed/">
-    <script type="text/javascript">
-      window._wpemojiSettings = {
-        "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/",
-        "ext": ".png",
-        "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/",
-        "svgExt": ".svg",
-        "source": {
-          "concatemoji": "https:\/\/demo.siteorigin.com\/unwind\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"
-        }
-      };
-      ! function(e, a, t) {
-        var r, n, o, i, p = a.createElement("canvas"),
-          s = p.getContext && p.getContext("2d");
-
-        function c(e, t) {
-          var a = String.fromCharCode;
-          s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, e), 0, 0);
-          var r = p.toDataURL();
-          return s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, t), 0, 0), r === p.toDataURL()
-        }
-
-        function l(e) {
-          if (!s || !s.fillText) return !1;
-          switch (s.textBaseline = "top", s.font = "600 32px Arial", e) {
-            case "flag":
-              return !c([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) && (!c([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !c([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]));
-            case "emoji":
-              return !c([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212])
-          }
-          return !1
-        }
-
-        function d(e) {
-          var t = a.createElement("script");
-          t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
-        }
-        for (i = Array("flag", "emoji"), t.supports = {
-            everything: !0,
-            everythingExceptFlag: !0
-          }, o = 0; o < i.length; o++) t.supports[i[o]] = l(i[o]), t.supports.everything = t.supports.everything && t.supports[i[o]], "flag" !== i[o] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[i[o]]);
-        t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function() {
-          t.DOMReady = !0
-        }, t.supports.everything || (n = function() {
-          t.readyCallback()
-        }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
-          "complete" === a.readyState && t.readyCallback()
-        })), (r = t.source || {}).concatemoji ? d(r.concatemoji) : r.wpemoji && r.twemoji && (d(r.twemoji), d(r.wpemoji)))
-      }(window, document, window._wpemojiSettings);
-    </script>
     <script src="https://demo.siteorigin.com/unwind/wp-includes/js/wp-emoji-release.min.js?ver=5.5.1" type="text/javascript" defer=""></script>
-    <style type="text/css">
-      img.wp-smiley,
-      img.emoji {
-        display: inline !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: 1em !important;
-        width: 1em !important;
-        margin: 0 .07em !important;
-        vertical-align: -0.1em !important;
-        background: none !important;
-        padding: 0 !important;
-      }
-    </style>
     <link rel="stylesheet" id="wp-block-library-css" href="https://demo.siteorigin.com/unwind/wp-includes/css/dist/block-library/style.min.css?ver=5.5.1" type="text/css" media="all">
     <style id="wp-block-library-inline-css" type="text/css">
       .has-text-align-justify {
@@ -147,14 +47,6 @@
     <link rel="stylesheet" id="jetpack_css-css" href="https://demo.siteorigin.com/unwind/wp-content/plugins/jetpack/css/jetpack.css?ver=8.9.1" type="text/css" media="all">
     <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" id="jquery-core-js"></script>
     <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/avatar-manager/assets/js/avatar-manager.min.js?ver=1.2.1" id="avatar-manager-js"></script>
-    <script type="text/javascript" id="wpmenucart-ajax-assist-js-extra">
-      /* <![CDATA[ */
-      var wpmenucart_ajax_assist = {
-        "shop_plugin": "woocommerce",
-        "always_display": ""
-      };
-      /* ]]> */
-    </script>
     <script type="text/javascript" src="https://demo.siteorigin.com/unwind/wp-content/plugins/woocommerce-menu-bar-cart/javascript/wpmenucart-ajax-assist.js?ver=2.9.5" id="wpmenucart-ajax-assist-js"></script>
     <link rel="https://api.w.org/" href="https://demo.siteorigin.com/unwind/wp-json/">
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.siteorigin.com/unwind/xmlrpc.php?rsd">
