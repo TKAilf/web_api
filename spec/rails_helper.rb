@@ -69,7 +69,7 @@ RSpec.configure do |config|
 
   config.before(:each, type: :system, js: true) do
     driven_by Capybara.javascript_driver
-    host! "http://#{Capybara.server_host}:#{Capybara.server_port}"
+    Capybara.app_host = "http://#{Capybara.server_host}:#{Capybara.server_port}"
   end
 end
 

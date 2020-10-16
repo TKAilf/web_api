@@ -5,10 +5,15 @@ Capybara.default_max_wait_time = 5
 Capybara.ignore_hidden_elements = true
 
 Capybara.register_driver :selenium_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: {
+      args: %w[--no-sandbox --disable--gpu --window-size=1280x800]
+    }
+  )
   options = {
     browser: :remote,
     url: ENV.fetch("SELENIUM_DRIVER_URL"),
-    desired_capabilities: :chrome
+    desired_capabilities: capabilities
   }
   Capybara::Selenium::Driver.new(app, options)
 end
