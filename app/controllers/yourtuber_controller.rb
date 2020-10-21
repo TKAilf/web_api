@@ -4,10 +4,7 @@ class YourtuberController < ApplicationController
   def index
   end
 
-  def new
-  end
-
-  def search
+  def result
     @input_video_id = params[:video_id]
     @find_videos_list = find_videos_list(@input_video_id)
   end
