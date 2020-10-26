@@ -3,7 +3,7 @@
     <header class="entry-header">
       <h2 class="entry-title">タグ検索結果</h2>
     </header>
-    <div class="result-container">
+    <div class="container">
       <% @find_videos_list.items.each do |item| %>
         <p>
           <div class="embed-responsive embed-responsive-16by9">
@@ -25,7 +25,12 @@
           </div>
         </div>
       <% end %>
-      <p class="mt-3 text-danger">画面がスクロールしなくなった場合は画面の更新を行ってください。</p>
+    </div>
+    <div class="container">
+      <% if @find_videos_list.items.blank? %>
+        <p>残念ながら、動画が見つかりませんでした(´・∀・｀)<br>下記のボタンをクリックするとホーム画面に戻りますので動画のIDを確かめて再度検索をお願いします。</p>
+        <p><%= link_to "クリック", yourtuber_index_path, class: 'btn btn-primary my-3 py-2 px-5' %></p>
+      <% end %>
     </div>
   </article>
 </div>
