@@ -1,16 +1,10 @@
 <div class="top-bar sticky-bar sticky-menu">
   <div class="container">
-    <nav id="result-site-navigation" class="main-navigation mx-auto" role="navigation">
-      <div class="menu-main-menu-container">
-        <ul id="result-primary-menu" class="menu">
-          <li id="result-menu-item-1636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1636 mr-5">
-            <%= link_to "タグについて", yourtuber_index_path, class: "navigation-botton-position align-middle", aria: {current: "page"} %>
-          </li>
-          <li id="result-menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094 ml-5 mr-4">
-            <%= link_to "yourtuberでタグ検索してみましょう！", yourtuber_index_path, class: "navigation-botton-position align-middle", aria: {current: "page"} %>
-          </li>
-          <li id="result-menu-item-1881" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1881 ml-5">
-            <%= link_to "ホームに戻る", yourtuber_index_path, class: "navigation-botton-position align-middle", aria: {current: "page"} %>
+    <nav id="result-site-navigation" class="main-navigation w-100" role="navigation">
+      <div class="menu-main-menu-container w-75 mx-auto">
+        <ul id="result-primary-menu" class="menu d-flex justify-content-around">
+          <li id="result-menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094">
+            <%= link_to "YOURTUBER", yourtuber_index_path, class: "navigation-botton-position align-middle", aria: {current: "page"}, data: {"turbolinks" => false} %>
           </li>
         </ul>
       </div>
