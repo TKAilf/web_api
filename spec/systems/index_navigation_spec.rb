@@ -19,7 +19,7 @@ RSpec.describe "index_navigation", type: :system do
       end
       it "ページ内リンク:ページトップ に遷移する" do
         within "#menu-item-1881" do
-          expect(page).to have_link "ホームに戻る", href: "#page"
+          expect(page).to have_link "ホームに戻る", href: "#header"
         end
       end
     end
