@@ -25,7 +25,7 @@
         <div id="form-group" class="form-group">
           <%= form_with model: @yourtuber, url: yourtuber_results_path, local: true do |form| %>
             <%= form.label :video_id, 'タグを検索する', class: 'h4 float-left mb-md-3' %>
-            <%= form.text_field :video_id, class: 'form-control form-control-lg', placeholder: '動画IDを入力してください' %>
+            <%= form.text_field :video_id, class: 'form-control form-control-lg', placeholder: '動画IDを入力してください', required: true, pattern: '[0-9A-Za-z_-]{10}[048AEIMQUYcgkosw]' %>
             <small class="text-danger">このサイトはWEB APIを使用しているため使用制限があります。使用制限に達している場合はサイトの使用ができなくなります。</small>
             <div class="w-100"></div>
             <%= form.submit '確定して次へ', class: 'btn btn-primary my-3' %>
