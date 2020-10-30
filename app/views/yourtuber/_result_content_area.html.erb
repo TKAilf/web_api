@@ -26,7 +26,7 @@
         </div>
       <% end %>
     </div>
-    <div class="container">
+    <div id="not_exist_video_id" class="container">
       <% if @find_videos_list.items.blank? %>
         <p>残念ながら、動画が見つかりませんでした(´・∀・｀)<br>下記のボタンをクリックするとホーム画面に戻りますので動画のIDを確かめて再度検索をお願いします。</p>
         <p><%= link_to "クリック", yourtuber_index_path, class: 'btn btn-primary my-3 py-2 px-5', data: {"turbolinks" => false} %></p>
