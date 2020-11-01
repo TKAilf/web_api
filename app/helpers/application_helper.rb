@@ -5,7 +5,7 @@ module ApplicationHelper
     service = Google::Apis::YoutubeV3::YouTubeService.new
     service.key = ENV['ENV_API_KEY']
     opt = {
-      id: video_id
+      id: video_id,
     }
     service.list_videos(:snippet, opt)
   end

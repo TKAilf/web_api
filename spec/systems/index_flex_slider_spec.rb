@@ -5,6 +5,7 @@ RSpec.describe "index_navigation", type: :system do
     before do
       visit yourtuber_index_path
     end
+
     describe "flex_slider.html.erb" do
       it "ページ内リンク:Youtubeタグについて に遷移する" do
         within "#flexslider-tag-describe" do
