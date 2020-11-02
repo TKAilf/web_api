@@ -7,7 +7,7 @@ RSpec.describe "results_content_area", type: :system do
     let(:not_have_tags_video_id) { '5BKfzPqi7Y8' }
 
     before do
-        visit yourtuber_index_path
+      visit yourtuber_index_path
     end
 
     context "form内の文字数が11文字でパターンに適し、動画タグが存在する時", vcr: true do
@@ -17,6 +17,7 @@ RSpec.describe "results_content_area", type: :system do
           click_on '確定して次へ'
         end
       end
+
       it "タグ検索結果が表示される" do
         within "#tag_search_result_header" do
           expect(page).to have_selector "h2", text: "タグ検索結果"
@@ -25,7 +26,7 @@ RSpec.describe "results_content_area", type: :system do
       it "video_idに基づいたyoutube videoが表示される" do
         within "#iframe_body" do
           expect(page).to have_selector "iframe"
-          expect(page).to  have_css "iframe[src*='https://www.youtube.com/embed/#{video_id}']"
+          expect(page).to have_css "iframe[src*='#{video_id}']"
         end
       end
       it "video_idに基づいた動画タグが表示される" do
@@ -48,6 +49,7 @@ RSpec.describe "results_content_area", type: :system do
           click_on '確定して次へ'
         end
       end
+
       it "タグ検索結果が表示される" do
         within "#tag_search_result_header" do
           expect(page).to have_selector "h2", text: "タグ検索結果"
@@ -56,7 +58,7 @@ RSpec.describe "results_content_area", type: :system do
       it "video_idに基づいたyoutube videoが表示される" do
         within "#iframe_body" do
           expect(page).to have_selector "iframe"
-          expect(page).to  have_css "iframe[src*='https://www.youtube.com/embed/#{not_have_tags_video_id}']"
+          expect(page).to have_css "iframe[src*='#{not_have_tags_video_id}']"
         end
       end
       it "タグはありません が表示される" do
