@@ -1,0 +1,122 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=5MacJ8nDMQU&key=<ENV_API_KEY>&part=snippet
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-api-ruby-client/0.42.2 Linux/4.19.76-linuxkit (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Mon, 02 Nov 2020 01:22:09 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/2.5.8 gdcl/0.42.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Mon, 02 Nov 2020 01:22:09 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-T050=":443";
+        ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443";
+        ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#videoListResponse",
+          "etag": "YPIgT-E_cmcUYDiWtBXRkuzAsWc",
+          "items": [
+            {
+              "kind": "youtube#video",
+              "etag": "YRtgqTGrxl9cQJsC6n35j7wBHto",
+              "id": "5MacJ8nDMQU",
+              "snippet": {
+                "publishedAt": "2020-04-14T11:48:43Z",
+                "channelId": "UCpZnHxjKCAOm-FKPrYYi-LA",
+                "title": "凶悪犯が更生し、サイコパス診断を受けたら感動の結末に・・・。",
+                "description": "この感動、涙無しじゃ見れません。\n\n\n\n\n\ntwitter→https://twitter.com/brianjesse1",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/5MacJ8nDMQU/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/5MacJ8nDMQU/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/5MacJ8nDMQU/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/5MacJ8nDMQU/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/5MacJ8nDMQU/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "ブライアンチャンネル",
+                "tags": [
+                  "おもしろ",
+                  "爆笑",
+                  "あるある",
+                  "演じてみた",
+                  "感動",
+                  "涙",
+                  "涙腺崩壊"
+                ],
+                "categoryId": "24",
+                "liveBroadcastContent": "none",
+                "localized": {
+                  "title": "凶悪犯が更生し、サイコパス診断を受けたら感動の結末に・・・。",
+                  "description": "この感動、涙無しじゃ見れません。\n\n\n\n\n\ntwitter→https://twitter.com/brianjesse1"
+                },
+                "defaultAudioLanguage": "ja"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 1
+          }
+        }
+  recorded_at: Mon, 02 Nov 2020 01:22:09 GMT
+recorded_with: VCR 6.0.0

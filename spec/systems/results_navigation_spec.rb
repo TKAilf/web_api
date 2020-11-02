@@ -7,12 +7,11 @@ RSpec.describe "results_navigation", type: :system do
 
     before do
       VCR.use_cassette("get_youtube_api") do
-        find_videos_list(video_id)
-      end
-      visit yourtuber_index_path
-      within "#form-group" do
-        fill_in 'タグを検索する', with: video_id
-        click_on '確定して次へ'
+        visit yourtuber_index_path
+        within "#form-group" do
+          fill_in 'タグを検索する', with: video_id
+          click_on '確定して次へ'
+        end
       end
     end
 
