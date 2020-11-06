@@ -3,6 +3,8 @@ services:
   yourtuber:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    stdin_open: true
+    tty: true
     volumes:
       - .:/myapp
       - public-data:/myapp/public
