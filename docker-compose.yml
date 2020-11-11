@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   yourtuber:
     build: .
@@ -20,9 +20,9 @@ services:
     logging:
       driver: none
   db:
-    image: postgres
+    image: postgres:latest
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - ./tmp/db:/var/lib/postgresql/data:z
     environment:
       POSTGRES_PASSWORD: password
   web:
