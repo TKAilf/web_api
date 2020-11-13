@@ -1,6 +1,6 @@
 FROM ruby:2.5
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
