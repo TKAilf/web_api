@@ -29,8 +29,7 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
-#ソケット接続するのでいらないはず
-#EXPOSE 3000
-
 # puma.sockを配置するディレクトリを作成
-RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/sockets tmp/pids \
+  && touch tmp/sockets/puma.sock \
+  && touch tmp/pids/server.pid
