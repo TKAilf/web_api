@@ -31,7 +31,7 @@ services:
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
     ports:
-      - "80:80"
+      - "8080:8080"
     depends_on:
       - yourtuber
 volumes:
