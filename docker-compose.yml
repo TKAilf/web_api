@@ -21,6 +21,7 @@ services:
       driver: none
   db:
     image: postgres:latest
+    user: "${UID}:${GID}"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:

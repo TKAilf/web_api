@@ -40,5 +40,3 @@ ENTRYPOINT ["entrypoint.sh"]
 RUN mkdir -p tmp/sockets tmp/pids \
   && touch tmp/sockets/puma.sock \
   && touch tmp/pids/server.pid
-
-USER root
