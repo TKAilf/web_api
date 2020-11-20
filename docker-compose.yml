@@ -22,7 +22,7 @@ services:
   db:
     image: postgres:latest
     volumes:
-      - pg-data:/var/lib/postgresql/data
+      - ./tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
   web:
@@ -38,4 +38,4 @@ volumes:
     public-data:
     tmp-data:
     log-data:
-    pg-data:
+    db-data:
