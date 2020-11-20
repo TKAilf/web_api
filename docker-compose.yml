@@ -21,9 +21,8 @@ services:
       driver: none
   db:
     image: postgres:latest
-    user: "${UID}:${GID}"
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - pg-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
   web:
@@ -39,4 +38,4 @@ volumes:
     public-data:
     tmp-data:
     log-data:
-    db-data:
+    pg-data:
