@@ -23,8 +23,12 @@ services:
     image: postgres:latest
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "3306:3306"
     environment:
+      POSTGRES_USER: $DATABASE_USER_NAME
       POSTGRES_PASSWORD: $DATABASE_PASSWORD
+    restart: always
   web:
     build: nginx
     volumes:
