@@ -1,24 +1,30 @@
 version: '3'
 services:
   yourtuber:
-    build: .
+    # localでの使用
+    # build: .
+    # aws ecrでの使用
+    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
-    stdin_open: true
-    tty: true
     volumes:
       - .:/myapp
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
       - log-data:/myapp/log
-    depends_on:
-      - db
-      - selenium_chrome
+    # depends_on:
+    #   - db
+    #   - selenium_chrome
     environment:
     - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
+    # aws cloudwatchでの出力
+    # logging:
+    #   driver: awslogs
+    #   options:
+    #     awslogs-group: yourtuber
+    #     awslogs-region: ap-northeast-1
+    #     awslogs-stream-prefix: yourtuber
   selenium_chrome:
     image: selenium/standalone-chrome-debug
-    logging:
-      driver: none
   db:
     image: postgres:latest
     volumes:
@@ -28,16 +34,18 @@ services:
     environment:
       POSTGRES_USER: $DATABASE_USER_NAME
       POSTGRES_PASSWORD: $DATABASE_PASSWORD
-    restart: always
   web:
-    build: nginx
+    # localでの使用
+    # build: ./nginx
+    # aws ecrでの使用
+    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
     volumes:
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
     ports:
       - "80:80"
-    depends_on:
-      - yourtuber
+    # depends_on:
+    #   - yourtuber
 volumes:
     public-data:
     tmp-data:

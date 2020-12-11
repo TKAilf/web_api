@@ -27,7 +27,11 @@ WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
-RUN bundle install
+RUN gem update --system \
+  && gem install bundler \
+  && bundle update --bundler \
+  && bundle install
+
 #ホストからコンテナにコピー（ホスト側は相対パス）
 COPY . /myapp
 
