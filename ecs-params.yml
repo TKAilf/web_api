@@ -1,0 +1,15 @@
+version: 1
+task_definition:
+  services:
+    yourtuber:
+      cpu_shares: 100
+      mem_limit: 240000000
+    selenium_chrome:
+      cpu_shares: 100
+      mem_limit: 240000000
+    db:
+      cpu_shares: 100
+      mem_limit: 240000000
+    web:
+      cpu_shares: 100
+      mem_limit: 240000000
