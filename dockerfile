@@ -24,8 +24,8 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
 RUN mkdir /myapp
 WORKDIR /myapp
 
-ADD Gemfile /myapp/Gemfile
-ADD Gemfile.lock /myapp/Gemfile.lock
+ADD ./Gemfile /myapp/Gemfile
+ADD ./Gemfile.lock /myapp/Gemfile.lock
 
 RUN gem update --system \
   && gem install bundler \
@@ -36,7 +36,7 @@ RUN gem update --system \
 ADD . /myapp
 
 # Add a script to be executed every time the container starts.
-ADD entrypoint.sh /usr/bin/
+ADD ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
