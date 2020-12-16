@@ -24,16 +24,15 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
 RUN mkdir /myapp
 WORKDIR /myapp
 
-ADD ./Gemfile /myapp/Gemfile
-ADD ./Gemfile.lock /myapp/Gemfile.lock
+ADD ./Gemfile ./
+ADD ./Gemfile.lock ./
 
 RUN gem update --system \
-  && gem install bundler \
-  && bundle update --bundler \
+  && gem install bundler -v 2.2.0 \
   && bundle install
 
 #ホストからコンテナにコピー（ホスト側は相対パス）
-ADD . /myapp
+ADD . .
 
 # Add a script to be executed every time the container starts.
 ADD ./entrypoint.sh /usr/bin/
