@@ -2,9 +2,9 @@ version: '3'
 services:
   yourtuber:
     # localでの使用
-    # build: .
+    build: .
     # aws ecrでの使用
-    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
+    # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     volumes:
       - .:/myapp
@@ -15,7 +15,13 @@ services:
     #   - db
     #   - selenium_chrome
     environment:
-    - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
+      SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER_NAME: postgres
+      DATABASE_PASSWORD: password
+      YOURTUBER_DATABASE_PASSWORD: toshiki0511
+
     # aws cloudwatchでの出力
     # logging:
     #   driver: awslogs
@@ -30,15 +36,16 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
       POSTGRES_USER: $DATABASE_USER_NAME
       POSTGRES_PASSWORD: $DATABASE_PASSWORD
+      POSTGRES_DB: $DATABASE_HOST
   web:
     # localでの使用
-    # build: ./nginx
+    build: ./nginx
     # aws ecrでの使用
-    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
+    # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
     volumes:
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
