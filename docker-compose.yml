@@ -6,11 +6,11 @@ services:
     # aws ecrでの使用
     image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
-    # volumes:
-    #   - .:/myapp
-    #   - public-data:/myapp/public
-    #   - tmp-data:/myapp/tmp
-    #   - log-data:/myapp/log
+    volumes:
+      - .:/myapp
+      - public-data:/myapp/public
+      - tmp-data:/myapp/tmp
+      - log-data:/myapp/log
     # depends_on:
     #   - db
     #   - selenium_chrome
@@ -27,8 +27,8 @@ services:
     image: selenium/standalone-chrome-debug
   db:
     image: postgres:12
-    # volumes:
-    #   - db-data:/var/lib/postgresql/data
+    volumes:
+      - db-data:/var/lib/postgresql/data
     ports:
       - "3306:3306"
     environment:
@@ -39,15 +39,15 @@ services:
     # build: ./nginx
     # aws ecrでの使用
     image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
-    # volumes:
-    #   - public-data:/myapp/public
-    #   - tmp-data:/myapp/tmp
+    volumes:
+      - public-data:/myapp/public
+      - tmp-data:/myapp/tmp
     ports:
       - "8080:8080"
     # depends_on:
     #   - yourtuber
-# volumes:
-#     public-data:
-#     tmp-data:
-#     log-data:
-#     db-data:
+volumes:
+    public-data:
+    tmp-data:
+    log-data:
+    db-data:
