@@ -17,7 +17,7 @@ test:
 
 production:
   <<: *default
-  database: myapp_production
-  host: <%= ENV['PG_HOST'] || 'db' %>
-  username: yourtuber
-  password: <%= ENV['YOURTUBER_DATABASE_PASSWORD'] %>
+  host: <%= ENV['RDS_HOST'] %>
+  database: <%= ENV['RDS_DATABASE_NAME'] %>
+  username: <%= ENV['RDS_USER_NAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>

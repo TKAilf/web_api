@@ -2,9 +2,9 @@ version: '3'
 services:
   yourtuber:
     # localでの使用
-    # build: .
+    build: .
     # aws ecrでの使用
-    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
+    # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     volumes:
       - .:/myapp
@@ -16,12 +16,11 @@ services:
     #   - selenium_chrome
     environment:
       SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
-      DATABASE_HOST: db
-      DATABASE_PORT: 5432
-      DATABASE_USER_NAME: postgres
-      DATABASE_PASSWORD: password
-      YOURTUBER_DATABASE_PASSWORD: toshiki0511
-      PG_HOST: localhost
+      # DATABASE_HOST: db
+      # DATABASE_PORT: 5432
+      # DATABASE_USER_NAME: postgres
+      # DATABASE_PASSWORD: password
+      # YOURTUBER_DATABASE_PASSWORD: toshiki0511
   selenium_chrome:
     image: selenium/standalone-chrome-debug
   db:
@@ -31,9 +30,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: $DATABASE_USER_NAME
-      POSTGRES_PASSWORD: $DATABASE_PASSWORD
-      POSTGRES_DB: $DATABASE_HOST
+      POSTGRES_DB: $RDS_HOST
+      POSTGRES_USER: $RDS_USER_NAME
+      POSTGRES_PASSWORD: $RDS_PASSWORD
   web:
     # localでの使用
     # build: ./nginx
