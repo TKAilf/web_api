@@ -1,19 +1,26 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: <%= ENV.fetch("DB_USER_NAME") { 'yourtuber_user' } %>
-  password: <%= ENV.fetch("DB_PASSWORD") { 'password' } %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  host: <%= ENV['DB_HOST'] %>
-  database: <%= ENV['DB_NAME'] %>
+  # host: <%= ENV("DB_HOST") %>
+  # database: <%= ENV("DB_NAME") %>
+  # username: <%= ENV("DB_USER") %>
+  # password: <%= ENV("DB_PASSWORD") %>
+  host: <%= ENV['RDS_HOST'] %>
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USER_NAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  port: 3306
 
 test:
   <<: *default
-  host: <%= ENV['DB_HOST'] %>
+  host: <%= ENV("DB_HOST") %>
   database: myapp_test
+  username: <%= ENV("DB_USER") %>
+  password: <%= ENV("DB_PASSWORD") %>
 
 production:
   <<: *default
@@ -21,3 +28,4 @@ production:
   database: <%= ENV['RDS_DB_NAME'] %>
   username: <%= ENV['RDS_USER_NAME'] %>
   password: <%= ENV['RDS_PASSWORD'] %>
+  port: 3306
