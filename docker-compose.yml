@@ -1,25 +1,25 @@
-version: '3'
+version: '3.8'
 services:
   yourtuber:
     # localでの使用
     build: .
     # aws ecrでの使用
     # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+    command: bash -c "rm -f tmp/pids/server.pid && rails s -e production"
     volumes:
-      - .:/myapp
+      - application-data:/myapp
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
       - log-data:/myapp/log
-    # depends_on:
-    #   - db
-    #   - selenium_chrome
+    depends_on:
+      - db
+      - selenium_chrome
     environment:
       SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
-      DATABASE_HOST: $DB_HOST
-      DATABASE_NAME: $DB_NAME
-      DATABASE_USER_NAME: $DB_USER
-      DATABASE_PASSWORD: $DB_PASSWORD
+      DB_HOST: db
+      DB_NAME: yourtuber
+      DB_USER: yourtuber_user
+      DB_PASSWORD: password
   selenium_chrome:
     image: selenium/standalone-chrome-debug
   db:
@@ -27,35 +27,26 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3406:3406"
     environment:
-      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
-      MYSQL_DATABASE: $DB_NAME
-      MYSQL_USER: $DB_USER
-      MYSQL_PASSWORD: $DB_PASSWORD
-  # db:
-  #   image: postgres:12
-  #   volumes:
-  #     - db-data:/var/lib/postgresql/data
-  #   ports:
-  #     - "5432:5432"
-  #   environment:
-  #     POSTGRES_DB: $RDS_HOST
-  #     POSTGRES_USER: $RDS_USER_NAME
-  #     POSTGRES_PASSWORD: $RDS_PASSWORD
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: yourtuber
+      MYSQL_USER: yourtuber_user
+      MYSQL_PASSWORD: password
   web:
     # localでの使用
-    # build: ./nginx
+    build: ./nginx
     # aws ecrでの使用
-    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
+    # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
     volumes:
       - public-data:/myapp/public
       - tmp-data:/myapp/tmp
     ports:
       - "8080:8080"
-    # depends_on:
-    #   - yourtuber
+    depends_on:
+      - yourtuber
 volumes:
+    application-data:
     public-data:
     tmp-data:
     log-data:
