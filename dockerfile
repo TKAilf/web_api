@@ -40,6 +40,6 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
 # puma.sockを配置するディレクトリを作成
-RUN mkdir -p tmp/sockets tmp/pids \
-  && touch tmp/sockets/puma.sock \
-  && touch tmp/pids/server.pid
+RUN mkdir -p config/tmp/sockets config/tmp/pids \
+  && touch config/tmp/sockets/puma.sock \
+  && touch config/tmp/pids/server.pid

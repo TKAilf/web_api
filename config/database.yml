@@ -5,10 +5,6 @@ default: &default
 
 development:
   <<: *default
-  # host: <%= ENV("DB_HOST") %>
-  # database: <%= ENV("DB_NAME") %>
-  # username: <%= ENV("DB_USER") %>
-  # password: <%= ENV("DB_PASSWORD") %>
   host: <%= ENV['RDS_HOST'] %>
   database: <%= ENV['RDS_DB_NAME'] %>
   username: <%= ENV['RDS_USER_NAME'] %>
@@ -17,10 +13,10 @@ development:
 
 test:
   <<: *default
-  host: <%= ENV("DB_HOST") %>
+  host: <%= ENV['DB_HOST'] %>
   database: myapp_test
-  username: <%= ENV("DB_USER") %>
-  password: <%= ENV("DB_PASSWORD") %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 production:
   <<: *default
