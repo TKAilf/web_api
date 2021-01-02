@@ -16,7 +16,7 @@ youtube動画で生計を立てるyoutuberの方々は、面白い動画を取�
 ***
 ### **AWS構成図**
 ***
-![AWS構成図](https://i.imgur.com/mauYNH2.png)
+![AWS構成図](https://i.imgur.com/fGOJH2k.png)
 
 ***
 ### **開発環境**
