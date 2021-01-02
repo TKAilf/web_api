@@ -5,7 +5,7 @@ services:
     build: .
     # aws ecrでの使用
     # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
-    command: bash -c "rm -rf config/tmp/pids/server.pid && rails s -e production"
+    command: bash -c "rm -rf config/tmp/pids/server.pid && rails s"
     volumes:
       - application-data:/myapp
       - public-data:/myapp/public
