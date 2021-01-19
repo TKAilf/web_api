@@ -2,9 +2,9 @@ version: '3.8'
 services:
   yourtuber:
     # localでの使用
-    build: .
+    # build: .
     # aws ecrでの使用
-    # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
+    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/yourtuber_ecr
     command: bash -c "rm -rf config/tmp/pids/server.pid && rails s"
     volumes:
       - application-data:/myapp
@@ -35,9 +35,9 @@ services:
       MYSQL_PASSWORD: password
   web:
     # localでの使用
-    build: ./nginx
+    # build: ./nginx
     # aws ecrでの使用
-    # image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
+    image: 244231949897.dkr.ecr.ap-northeast-1.amazonaws.com/nginx_ecr:latest
     volumes_from:
       - yourtuber
     ports:
